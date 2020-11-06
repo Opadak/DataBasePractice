@@ -22,16 +22,38 @@ class SharedPreferenceActivity : AppCompatActivity() {
         // 4. MODE_MULTI_PROCESS = 이미 호출되어 사용중인지 체크
         // 5. MODE_APPEND = 기존 preference에 신규로 추가
 
-        //데이터를 넣어줄 수 있는 것 = editer (sharedpreference에서 가지고 온다)
-        val editor = sharedPreference.edit()
-        editor.putString("hello", "안녕하세요")
-        editor.commit() //이 구문을 꼭 해야 데이터의 삽입이 완료가 된다 *********
+//        //데이터를 넣어줄 수 있는 것 = editer (sharedpreference에서 가지고 온다)
+//        val editor = sharedPreference.edit()
+//        editor.putString("hello", "안녕하세요")
+//        editor.commit() //이 구문을 꼭 해야 데이터의 삽입이 완료가 된다 *********
 
-        button.setOnClickListener {
+        save_btn.setOnClickListener {
+            val sharedPreference = getSharedPreferences("sp1", Context.MODE_PRIVATE) //sharedpreference를 불러오는것.
+            val editer = sharedPreference.edit()
+            editer.putString("hello","안녕하세요")
+            editer.putString("goodbye","안녕히가세요")
+            editer.commit()
+        }
+
+        load_btn.setOnClickListener {
             //sharedpreference에서 데이터를 불러오는 방법
-            val sharedPreferences = getSharedPreferences("sp1", Context.MODE_PRIVATE)
-            val value = sharedPreference.getString("hello", "데이터 없음")
-            Log.d("key-value", "Value : "+ value)
+            val sharedPreferences = getSharedPreferences("sp1", Context.MODE_PRIVATE) //sharedpreference를 불러오는것.
+            val value1 = sharedPreference.getString("hello", "데이터 없음")
+            val value2 = sharedPreference.getString("goodbye","데이터 없음")
+            Log.d("key-value", "Value 1 : "+ value1)
+            Log.d("key-value", "Value 2 : "+ value2)
+        }
+        delete_btn.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("sp1", Context.MODE_PRIVATE) //sharedpreference를 불러오는것.
+            val editor = sharedPreference.edit()
+            editor.remove("hello")
+            editor.commit()
+        }
+        delete_all_btn.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("sp1", Context.MODE_PRIVATE) //sharedpreference를 불러오는것.
+            val editor = sharedPreference.edit()
+            editor.clear() //전체다 지워주는 것.
+            editor.commit()
         }
     }
 }

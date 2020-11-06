@@ -4,10 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SharedPreferenceActivity">
+    tools:context=".SharedPreferenceActivity"
+    android:orientation="vertical">
     <Button
-        android:id="@+id/button"
+        android:id="@+id/save_btn"
+        android:text="저장"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
+    <Button
+        android:id="@+id/load_btn"
+        android:text="불러오기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/delete_btn"
+        android:text="부분 지우기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/delete_all_btn"
+        android:text="전체 지우기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
