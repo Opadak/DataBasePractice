@@ -5,12 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_async.*
 import java.lang.Exception
 
 class AsyncActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_async)
+
+        var task : BackgroundAsyncTask?  = null
+        start.setOnClickListener {
+            task = BackgroundAsyncTask(progressbar, ment)
+            task?.execute()
+        }
+        stop.setOnClickListener {
+            task?.cancel(true)
+        }
     }
 }
 

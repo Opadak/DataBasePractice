@@ -1,0 +1,15 @@
+Realm implement하는 방법
+
+->
+gradle(Project 단위) 에 삽입
+dependencies에 추가!
+classpath "io.realm:realm-gradle-plugin:3.5.0"
+
+
+gradle(app단위) 에 삽입 (삽입시 순서 지켜주기!)
+apply plugin: 'kotlin-kapt'  (밑에 넣어줬는데 오류가 나면 그 때 삽입!)
+
+apply plugin: 'realm-android'
+
+
+다 적었음 싱크 해준다!
