@@ -21,6 +21,12 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
         />
+<!--    안드로이드의 프로그레스 바(ProgressBar)는 애플리케이션 안에서 특정 작업을 수행 중일 때 사용자에
+게 작업이 정상적으로 진행되고 있음을 시각적으로 표현할 때 사용되는 뷰(View)입니다. 안드로이드의 ProgressBar는
+작업 종류에 따라 두 가지 Style을 지원하는데 첫 번째는 style="? android:attr/progressBarStyleHorizontal"
+형태로 앱이 작업을 수행하고 있을 때 작업 진행 정도를 수치값으로 표현할 수 있고 작업 완료 시점을 예상할 수 있을 때
+사용하는 Style입니다.  두 번째 Style은 style="? android:attr/progressBarStyle" 형태로 앱이 작업을 수행하는데
+ 있어 완료 시점을 명확하게 알 수 없고 수치 값으로 진행상태를 표시할 수 없을 때 사용되는 형태입니다.-->
     <Button
         android:id="@+id/start"
         android:text="시작"
